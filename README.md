@@ -32,12 +32,7 @@ A tab-delimited text file, **one row per gene, one column per sample**:
 - Default column names are `Entrez_Gene_Id` and `Hugo_Symbol` (the cBioPortal layout). Other names can be set with `id_column` and `symbol_column` at the top of the script.
 - Gene IDs must be **Entrez IDs**, because coordinates are looked up in the TxDb package by Entrez ID.
 - Values are expression levels such as RSEM, TPM, FPKM or normalized counts. By default they are transformed with `log2(x + 1)`; set `log_transform <- FALSE` if the data is already on a log scale.
-- At least 3 samples; in practice dozens or more are needed for stable correlations.
-- Tumor and normal samples should be analysed in separate runs, since mixing them creates co-expression driven by sample type rather than by genomic position.
-
-## Species and genome build
-
-Coordinates come from the TxDb package named in `txdb_package`. To use another assembly or species, change that name (for example `TxDb.Hsapiens.UCSC.hg19.knownGene`) and make sure the input IDs match its gene IDs. The chromosome sets `genome_chromosomes` and `chromosome_order` assume human naming (`chr1`-`chr22`, `chrX`, `chrY`, `chrM`) and need editing for other species.
+- Tumor and normal samples should be analysed in separate runs.
 
 ## Logic
 
