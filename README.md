@@ -96,13 +96,3 @@ Key COD columns: `START` / `END` (gene indices on the chromosome), `n_genes`, `f
 | `log_transform` | `TRUE` | Apply `log2(x + 1)` |
 | `id_column`, `symbol_column` | `Entrez_Gene_Id`, `Hugo_Symbol` | Input column names |
 | `txdb_package` | hg38 human | Annotation package |
-| `color_limit` | `0.6` | Heatmap colour scale is clipped to +/- this r (tables are not clipped) |
-| `zoom_flank` | `5` | Genes shown on each side of the COD in the zoom plot |
-| `n_permutations`, `random_seed` | `1000`, `42` | Permutation test settings |
-| `font_family` | `serif` | Font used in SVG figures |
-
-## Notes
-
-- Memory and time grow with the number of genes per chromosome (full correlation matrices are held in memory) and with the number of window sizes.
-- Gene pairs are not independent observations, so the pair-level distributions are descriptive only.
-- Check the number of CODs and the chosen window before interpreting results: very small cohorts or noisy data can give few or unstable domains.
