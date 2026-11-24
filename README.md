@@ -87,8 +87,7 @@ figures/
 
 Key COD columns: `START` / `END` (gene indices on the chromosome), `n_genes`, `first_gene_name`, `last_gene_name`, `start_bp`, `end_bp`, `size_kb`, `intra_coexpression`.
 
-## Main parameters (top of the script)
-
+## Main parameters
 | Parameter | Default | Meaning |
 |---|---|---|
 | `window_sizes` | `3:20` | Window sizes scanned |
