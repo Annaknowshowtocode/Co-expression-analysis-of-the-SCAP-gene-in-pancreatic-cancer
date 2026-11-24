@@ -54,39 +54,6 @@ A tab-delimited text file, **one row per gene, one column per sample**:
 11. **Gene-of-interest analysis** (optional): the 100 genes most correlated with it, plus the 10 CODs on the same chromosome and the 10 on other chromosomes most correlated with its COD. Significance comes from a permutation test (`n_permutations`, default 1000) that shuffles the COD's expression profile across samples and compares each observed r with the permuted maximum over all candidate CODs (max-T correction). It is exploratory: selection and testing use the same data.
 12. **Mirrored control**: CODs are mirrored along each chromosome (same sizes, different positions) and the same statistics are recomputed. It is a single control, not a random ensemble, so no p-values are given.
 
-## Output (`<output_dir>/`)
-
-```
-matrix/
-  <chr>.correlation.tsv      gene x gene correlation matrix
-  <chr>.annotation.tsv       gene order and coordinates
-  <chr>.binsignal.tsv        binsignal and p-value per gene (best window)
-  <chr>.COD.tsv              CODs on the chromosome
-  all_COD.tsv                all CODs
-  COD_stats_by_chromosome.tsv
-  mean_binsignal_*.tsv
-  removed_genes.tsv
-  COD_x_COD/                 COD annotation, full and per-chromosome matrices,
-                             pairwise tables (within / between chromosomes)
-  <GENE>_analysis/           tables from step 11
-  mirrored_control/          tables from step 12
-window_test/
-  all_COD_all_windows.tsv    every COD for every window
-  window_summary.tsv         per-window statistics (chr1 and genome)
-  thresholds.tsv, COD_count_by_chromosome.tsv
-  window_selection_chr1.svg, window_selection_genome.svg
-figures/
-  expression_before_filtering.svg
-  gene_pair_correlation_distribution.svg
-  heatmap_<chr>.svg
-  COD_by_chromosome.svg, COD_distributions.svg
-  <GENE>_COD_zoom.svg, <GENE>_COD_genes.tsv
-  COD_x_COD/*.svg
-  mirrored_control/*.svg
-```
-
-Key COD columns: `START` / `END` (gene indices on the chromosome), `n_genes`, `first_gene_name`, `last_gene_name`, `start_bp`, `end_bp`, `size_kb`, `intra_coexpression`.
-
 ## Main parameters
 | Parameter | Default | Meaning |
 |---|---|---|
