@@ -20,10 +20,6 @@ Rscript codfinder.R <input_file> <output_dir> [gene_of_interest]
 Rscript codfinder.R data/expression.txt results SCAP
 ```
 
-All three arguments are optional. Defaults: `expression.txt`, `codfinder_output`, `SCAP`. The script can also be run block by block in RStudio, in which case edit the defaults at the top. No absolute paths are used: all outputs go under `<output_dir>`.
-
-Pass `NULL`/empty or a symbol that is absent from the data as `gene_of_interest` and the gene-specific steps (9 and 14) are skipped.
-
 ## Input file
 
 A tab-delimited text file, **one row per gene, one column per sample**:
